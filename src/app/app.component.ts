@@ -1,10 +1,15 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import { pageAnimation, routerTransition } from './app.animation';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss'],
+  animations: [ pageAnimation ],
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent {
+  title = 'contact';
+  getState(outlet:any) {
+    return outlet.activatedRouteData.state;
+  }
 }
