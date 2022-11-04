@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { AuthenticationService } from './shared/services/authentication.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -26,8 +25,8 @@ import { HeaderComponent } from './_common/header/header.component';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
   ],
-  providers: [AuthenticationService, AuthService],
+  providers: [AuthService],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent],
 })
-export class AppModule { }
+export class AppModule {}
