@@ -27,6 +27,6 @@ import { HeaderComponent } from './_common/header/header.component';
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent]
 })
-export class AppModule {}
+export class AppModule { }
