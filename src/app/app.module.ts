@@ -23,10 +23,10 @@ import { HeaderComponent } from './_common/header/header.component';
     RouterModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule,
+    AngularFireDatabaseModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent],
 })
-export class AppModule { }
+export class AppModule {}
