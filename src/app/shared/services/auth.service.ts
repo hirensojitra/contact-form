@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from '../services/user';
-import * as auth from 'firebase/auth';
+import * as auth from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
@@ -27,7 +27,7 @@ export class AuthService {
       } else {
         // not logged in
         this.isLoggedIn = false;
-      } 
+      }
     });
     this.afAuth.authState.subscribe((user) => {
       if (user) {
