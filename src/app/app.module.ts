@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './shared/services/auth.service';
 import { HeaderComponent } from './_common/header/header.component';
+import { AuthModule } from './auth/auth.module';
+import { CommuterModule } from './commuter/commuter.module';
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
@@ -23,7 +25,9 @@ import { HeaderComponent } from './_common/header/header.component';
     RouterModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AuthModule,
+    CommuterModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

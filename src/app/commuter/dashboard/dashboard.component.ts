@@ -8,10 +8,11 @@ import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(public authService: AuthService) {}
-  generateImage(){
-    var node:any = document.getElementById('image-section');
+  constructor(public authService: AuthService) {
+    
+  }
+  generateImage() {
+    var node: any = document.getElementById('image-section');
     node.setAttribute("style", "color:red; border: none; border-radius: 0px");
     htmlToImage.toPng(node)
       .then(function (dataUrl) {
@@ -24,5 +25,12 @@ export class DashboardComponent implements OnInit {
         console.error('oops, something went wrong!', error);
       });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
+  user: any;
+  async getUsers() {
+    this.user = await this.authService.getAllUsers(this.authService.userData.uid);
+    console.log(this.user);
+  }
 }

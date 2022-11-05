@@ -1,29 +1,37 @@
-<div class="container-xxl">
-  <div class="row">
-    <div class="col-lg-4 offset-lg-4">
-
-      <div class="card p-4 mt-4">
-
-
-        <h2 class="mt-4">Login</h2>
-        <div class="mb-3">
-          <label for="userName" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" #userName required>
-          <div id="emailHelp" class="form-text">Enter registered email id.</div>
+<div class="row w-100 h-100">
+  <div class="col-md-6 offset-md-6 my-auto">
+    <h2 class="mt-4">Login</h2>
+    <div class="mb-3">
+      <label for="userName" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" #userName required>
+      <div id="emailHelp" class="form-text">Enter registered email id.</div>
+    </div>
+    <div class="mb-3">
+      <label for="userPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="userPassword" #userPassword required>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">
+            Remember Me
+          </label>
         </div>
-        <div class="mb-3">
-          <label for="userPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" id="userPassword" #userPassword required>
-        </div>
-        <div class="row">
-          <div class="col-6"><button class="btn btn-primary"
-              (click)="authService.SignIn(userName.value, userPassword.value)">Login</button></div>
-          <div class="col-6 text-end"><button class="btn btn-danger" (click)="authService.GoogleAuth()">Login with
-              Google</button></div>
-        </div>
-
-
+      </div>
+      <div class="col-6 text-end">
+        <a routerLink="/auth/forgot-password">Forgot Password?</a>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12"><button class="btn btn-primary w-100 mb-3"
+          (click)="authService.SignIn(userName.value, userPassword.value)">Login</button></div>
+      <div class="col-12"><button class="btn btn-danger w-100" (click)="authService.GoogleAuth()">Login with
+          Google</button></div>
+          <div class="col-12 text-center mt-3">
+            <p>Create new <a routerLink="/auth/register">account</a>.</p>
+        </div>
+    </div>
+
   </div>
 </div>

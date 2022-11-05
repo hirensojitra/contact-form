@@ -11,9 +11,7 @@ describe('ProfileSettingComponent', () => {
       declarations: [ ProfileSettingComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ProfileSettingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

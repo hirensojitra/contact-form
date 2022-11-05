@@ -1,8 +1,6 @@
-<div class="main-container" [@pageAnimation]="getState(o)">
-	<div class="header">
-		<app-header></app-header>
-	</div>
+<div class="main-container">
+	<app-header></app-header>
 	<div class="container-box">
-		<router-outlet #o="outlet"></router-outlet>
+		<router-outlet></router-outlet>
 	</div>
 </div>

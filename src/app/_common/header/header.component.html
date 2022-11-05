@@ -1,13 +1,7 @@
-<nav class="navbar navbar-light flex-md-nowrap p-0 shadow">
+<nav class="navbar navbar-light flex-md-nowrap p-0 shadow" *ngIf="authService.isLoggedIn">
     <span class="navbar-brand col-sm-3 col-md-2 mr-0"> Dashboard </span>
     <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" routerLink="/auth/login" *ngIf="!authService.isLoggedIn">
-                <i class="fas fa-sign-in-alt"></i>
-                Sign in
-            </a>
-        </li>
-        <li class="nav-item" *ngIf="authService.isLoggedIn">
+        <li class="nav-item">
             <a class="nav-link" (click)="authService.SignOut()">Log out </a>
         </li>
     </ul>

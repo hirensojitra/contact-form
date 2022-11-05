@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-profile-setting',
   templateUrl: './profile-setting.component.html',
   styleUrls: ['./profile-setting.component.scss']
 })
-export class ProfileSettingComponent implements OnInit {
+export class ProfileSettingComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) {
 
-  ngOnInit(): void {
   }
+  ngOnInit(): void {
 
+  }
+  ngAfterViewInit(): void {
+
+  }
 }
