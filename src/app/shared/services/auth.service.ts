@@ -1,11 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from '../services/user';
-import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import * as firebase from 'firebase/app';
+import { AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
@@ -90,9 +89,11 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['commuter']);
-    });
+    return this.AuthLogin(new firebase.GoogleAuthProvider()).then(
+      (res: any) => {
+        this.router.navigate(['commuter']);
+      }
+    );
   }
   // Auth logic to run auth providers
   AuthLogin(provider: any) {
